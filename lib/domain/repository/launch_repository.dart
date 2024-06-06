@@ -5,4 +5,5 @@ import '../entities/launch/launch.dart';
 
 abstract class LaunchRepository {
   Future<Either<Failure,List<Launch>>>getAllLaunches();
+  Future<Either<Failure,Launch>>getOneLaunch(String id);
 }
