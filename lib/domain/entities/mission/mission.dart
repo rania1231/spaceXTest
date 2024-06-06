@@ -7,6 +7,6 @@ class Mission extends Equatable{
   Mission({required this.mission_name, required this.mission_id, required this.description}){}
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [mission_name, mission_id,description];
 
 }
