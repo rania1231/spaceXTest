@@ -9,7 +9,7 @@ import '../../../core/errors/exceptions.dart';
 abstract class LaunchLocalDataSource {
   Future<List<LaunchModel>> getAllLaunches();
 
-  Future<LaunchModel>? getOneLaunch(int id);
+  Future<LaunchModel> getOneLaunch(String id);
 
   Future<Unit> saveLaunches(List<LaunchModel> launchModels);
 }
@@ -44,7 +44,7 @@ class LaunchLocalDataSourceimpl implements LaunchLocalDataSource {
   }
 
   @override
-  Future<LaunchModel> getOneLaunch(int id) async {
+  Future<LaunchModel> getOneLaunch(String id) async {
     List<LaunchModel>? launches = await getAllLaunches();
     if(launches!=null){
       for (LaunchModel model in launches) {

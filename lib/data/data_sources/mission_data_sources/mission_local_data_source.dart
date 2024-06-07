@@ -6,14 +6,14 @@ import 'package:spacex_test/data/models/MissionModel.dart';
 
 import '../../../core/errors/exceptions.dart';
 
-abstract class MissionLoacalDataSource {
+abstract class MissionLocalDataSource {
   Future<List<MissionModel>>getAllMissions();
-  Future<MissionModel>getOneMission(int id);
+  Future<MissionModel>getOneMission(String id);
   Future<Unit>saveMissions(List<MissionModel> missionModels);
 }
 
 
-class MissionLocalDataSourceimpl implements MissionLoacalDataSource {
+class MissionLocalDataSourceimpl implements MissionLocalDataSource {
   final SharedPreferences sharedPreferences;
 
   MissionLocalDataSourceimpl({required this.sharedPreferences});
@@ -43,7 +43,7 @@ class MissionLocalDataSourceimpl implements MissionLoacalDataSource {
   }
 
   @override
-  Future<MissionModel> getOneMission(int id) async {
+  Future<MissionModel> getOneMission(String id) async {
     List<MissionModel>? missions = await getAllMissions();
     if(missions!=null){
       for (MissionModel model in missions) {
