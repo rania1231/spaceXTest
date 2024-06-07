@@ -47,6 +47,7 @@ dependencies:
   path: ^1.9.0
   #local cache
   shared_preferences: ^2.2.3
+  get_it: ^7.6.8
 
 
 dev_dependencies:

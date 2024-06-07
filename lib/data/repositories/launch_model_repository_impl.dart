@@ -15,8 +15,8 @@ class LaunchModelRepositoryImpl implements LaunchRepository {
   final LaunchLocalDataSource launchLocalDataSource;
   final NetworkInfo networkInfo;
 
-  LaunchModelRepositoryImpl(this.networkInfo,
-      {required this.launchLocalDataSource, required this.launchRemoteDataSource}){}
+  LaunchModelRepositoryImpl(
+      {required this.launchLocalDataSource, required this.launchRemoteDataSource, required this.networkInfo}){}
 
   @override
   Future<Either<Failure, List<Launch>>> getAllLaunches()async {

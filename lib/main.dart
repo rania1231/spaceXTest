@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spacex_test/presentation/pages/Home_page.dart';
 
 
 void main() async{
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(appBar: AppBar(title: Text('SpaceX'),),),
+      home: HomePage(),
     );
   }
 }

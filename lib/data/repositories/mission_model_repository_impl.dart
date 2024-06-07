@@ -19,8 +19,8 @@ class MissionModelRepositoryImpl implements MissionRepository {
   final MissionLocalDataSource missionLocalDataSource;
   final NetworkInfo networkInfo;
 
-  MissionModelRepositoryImpl(this.networkInfo,
-      {required this.missionRemoteDataSource, required this.missionLocalDataSource}){}
+  MissionModelRepositoryImpl(
+      {required this.missionRemoteDataSource, required this.missionLocalDataSource,required this.networkInfo}){}
 
   @override
   Future<Either<Failure, List<Mission>>> getAllMissions()async {
