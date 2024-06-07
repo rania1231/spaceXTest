@@ -24,9 +24,7 @@ class MissionDetailsWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 40,
-              ),
+
               Text(
                 'Name:',
                 style: TextStyle(
@@ -34,38 +32,38 @@ class MissionDetailsWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 25),
               ),
-              SizedBox(height: 5),
+
               Text(
                 mission.mission_name,
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                style: TextStyle(color: Colors.black, ),
               ),
 
-              SizedBox(height: 20),
+
               Text(
                 'Id:',
                 style: TextStyle(
                     color: Color(0xFF81657C),
                     fontWeight: FontWeight.bold,
-                    fontSize: 25),
-              ),
-              SizedBox(height: 5),
-              Text(
-                mission.mission_id,
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                   ),
               ),
 
-              SizedBox(height: 20),
+              Text(
+                mission.mission_id,
+                style: TextStyle(color: Colors.black),
+              ),
+
+
               Text(
                 'Description:',
                 style: TextStyle(
                     color: Color(0xFF81657C),
                     fontWeight: FontWeight.bold,
-                    fontSize: 25),
+                ),
               ),
-              SizedBox(height: 5),
+
               Text(
                 mission.description,
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                style: TextStyle(color: Colors.black),
               ),
             ],
           ),
