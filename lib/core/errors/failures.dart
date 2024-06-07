@@ -22,3 +22,9 @@ class EmptyCacheFailure extends Failure {
   // TODO: implement props
   List<Object?> get props => [];
 }
+
+class NoObjectFoundFailure extends Failure {
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
