@@ -11,4 +11,3 @@ abstract class MissionsEvent extends Equatable {
   List<Object> get props => [];
 }
 class GetAllMissionsEvent extends MissionsEvent{}
-class RefreshMissionsEvent extends MissionsEvent{}

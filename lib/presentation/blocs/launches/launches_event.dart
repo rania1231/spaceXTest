@@ -9,4 +9,3 @@ abstract class LaunchesEvent extends Equatable {
   List<Object> get props => [];
 }
 class GetAllLaunchesEvent extends LaunchesEvent{}
-class RefreshLaunchesEvent extends LaunchesEvent{}

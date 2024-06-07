@@ -13,7 +13,7 @@ class LaunchesBloc extends Bloc<LaunchesEvent, LaunchesState> {
   final GetAllLaunchesUseCase getAllLaunches;
   LaunchesBloc({required this.getAllLaunches}) : super(LaunchesInitial()) {
     on<LaunchesEvent>((event,emit)async{
-      if(event is GetAllLaunchesEvent||event is RefreshLaunchesEvent){
+      if(event is GetAllLaunchesEvent){
         emit(LoadingLaunchesState());
         final posts=await getAllLaunches.call();
         posts.fold(

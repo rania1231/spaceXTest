@@ -14,7 +14,7 @@ class MissionsBloc extends Bloc<MissionsEvent, MissionsState> {
   final GetAllMissionsUseCase getAllMissions;
   MissionsBloc({required this.getAllMissions}) : super(MissionsInitial()) {
     on<MissionsEvent>((event,emit)async{
-      if(event is GetAllMissionsEvent||event is RefreshMissionsEvent){
+      if(event is GetAllMissionsEvent){
         emit(LoadingMissionsState());
         final posts=await getAllMissions.call();
         posts.fold(

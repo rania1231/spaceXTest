@@ -21,7 +21,7 @@ class MissionRemoteDataSourceImpl implements MissionRemoteDataSource{
   Future<List<MissionModel>> getAllMissions()async {
     final response=await client.get(Uri.parse(linkBase+'/missions'));
     if(response.statusCode==200){
-      List<Map<String,dynamic>>dataJson=json.decode(response.body) ;
+      List<dynamic>dataJson=json.decode(response.body) ;
       List<MissionModel>data= dataJson.map((elt) => MissionModel.fromJson(elt)).toList();
       return data;
     }else{
