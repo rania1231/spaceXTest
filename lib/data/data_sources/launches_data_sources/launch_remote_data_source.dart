@@ -6,7 +6,7 @@ import 'package:http/http.dart'as http;
 
 abstract class LaunchRemoteDataSource{
   Future<List<LaunchModel>>getAllLaunches();
-  Future<LaunchModel>getOneLaunch(String id);
+
 }
 
 
@@ -29,15 +29,6 @@ class LaunchRemoteDataSourceImpl implements LaunchRemoteDataSource{
 
   }
 
-  @override
-  Future<LaunchModel> getOneLaunch(String id)async {
-    final response=await client.get(Uri.parse(linkBase+'/lanches/$id'));
-    if(response.statusCode==200){
-      Map<String,dynamic> launchJson=json.decode(response.body);
-      LaunchModel launchModel=LaunchModel.fromJson(launchJson);
-      return launchModel;
-    }
-    else  throw Exception();
-  }
+
 
 }

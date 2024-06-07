@@ -43,25 +43,7 @@ class MissionModelRepositoryImpl implements MissionRepository {
     }
   }
 
-  @override
-  Future<Either<Failure, Mission>> getOneMission(String id) async {
-    if (await networkInfo.isConnected) {
-      try {
-        final remoteMission = await missionRemoteDataSource.getOneMission(id);
 
-        return Right(remoteMission);
-      } on ServerException {
-        return Left(ServerFailure());
-      }
-    } else {
-      try {
-        final localMission = await missionLocalDataSource.getOneMission(id);
-        return Right(localMission);
-      } on EmptyCacheException {
-        return Left(NoObjectFoundFailure());
-      }
-    }
-  }
 
 
 }

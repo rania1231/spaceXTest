@@ -39,25 +39,7 @@ class LaunchModelRepositoryImpl implements LaunchRepository {
       }
     }
 
-  @override
-  Future<Either<Failure, Launch>> getOneLaunch(String id) async {
-    if (await networkInfo.isConnected) {
-      try {
-        final remoteLaunch = await launchRemoteDataSource.getOneLaunch(id);
 
-        return Right(remoteLaunch);
-      } on ServerException {
-        return Left(ServerFailure());
-      }
-    } else {
-      try {
-        final localLaunch = await launchLocalDataSource.getOneLaunch(id);
-        return Right(localLaunch);
-      } on EmptyCacheException {
-        return Left(NoObjectFoundFailure());
-      }
-    }
-  }
 
 }
 
