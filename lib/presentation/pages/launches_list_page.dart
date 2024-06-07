@@ -25,12 +25,12 @@ class _LaunchesListPageState extends State<LaunchesListPage> {
           (builder: (context, state)
         {
           if (state is LoadingLaunchesState){
-            return CircularProgressIndicator();
+            return Center(child:CircularProgressIndicator());
           }else if (state is LoadedLaunchesState){
             return LaunchesListWidget(launches: state.launches);
           }else if (state is ErrorLaunchesState) {
             return Text('Error during the loading process');
-          }else return CircularProgressIndicator();
+          }else return Center(child:CircularProgressIndicator());
         }
         ),
 

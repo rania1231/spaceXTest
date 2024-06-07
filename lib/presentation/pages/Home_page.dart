@@ -10,18 +10,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:Text('SpaceX')),
-      body:Center(child:Row(
-        children: [
-          ElevatedButton(onPressed: (){ Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => LaunchesListPage()));}, child: Text('Launches')),
-          ElevatedButton(onPressed: (){ Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => MissionsListPage()));}, child: Text('Missions')),
-        ],
-      ))
+      body:Center(
+        child: Container(
+          width: 300,
+          height: 500,
+          color: Colors.purple[100],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child:Column(
+              children: [
+                SizedBox(height: 150,),
+                ElevatedButton(onPressed: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LaunchesListPage()));}, child: Text('Launches')),
+
+                SizedBox(height: 70,),
+                ElevatedButton(onPressed: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MissionsListPage()));}, child: Text('Missions')),
+              ],
+            )),
+          ),
+        ),
+      )
     );
   }
 }

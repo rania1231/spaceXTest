@@ -32,13 +32,13 @@ class LaunchDetailsWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 25),
               ),
-              SizedBox(height: 5),
+
               Text(
                 launch.name,
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                style: TextStyle(color: Colors.black),
               ),
 
-              SizedBox(height: 20),
+
               Text(
                 'Id:',
                 style: TextStyle(
@@ -46,24 +46,24 @@ class LaunchDetailsWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 25),
               ),
-              SizedBox(height: 5),
+
               Text(
                 launch.id,
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                style: TextStyle(color: Colors.black),
               ),
 
-              SizedBox(height: 20),
+
               Text(
                 'dateLocal:',
                 style: TextStyle(
                     color: Color(0xFF81657C),
                     fontWeight: FontWeight.bold,
-                    fontSize: 25),
+                   ),
               ),
-              SizedBox(height: 5),
+
               Text(
                 launch.date_local.toString(),
-                style: TextStyle(color: Colors.black, fontSize: 22),
+                style: TextStyle(color: Colors.black),
               ),
             ],
           ),

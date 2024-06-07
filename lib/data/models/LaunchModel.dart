@@ -8,15 +8,12 @@ class LaunchModel extends Launch {
       : super(id: id, details: details, date_local: date_local, name: name);
 
   factory LaunchModel.fromJson(dynamic launchMap) {
-    if (launchMap['id'] == null) {
-      return LaunchModel(
-          id: '0', name: launchMap['name'], details: launchMap['details'],date_local: launchMap['date_local']);
-    }
+
     return LaunchModel(
-        id: launchMap['id'],
-        name: launchMap['name'],
-        details: launchMap['details'],
-        date_local: launchMap['date_local']);
+        id: launchMap['id']??'0',
+        name: launchMap['name']??'',
+        details: launchMap['details']??'',
+        date_local: DateTime.parse(launchMap['date_local']));
   }
 
   Map<String, dynamic> toJson() {
@@ -24,7 +21,7 @@ class LaunchModel extends Launch {
       'id': this.id,
       'details': this.details,
       'name': this.name,
-      'date_local': this.date_local
+      'date_local': this.date_local.toString()
     };
   }
 }

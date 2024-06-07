@@ -23,13 +23,13 @@ class _MissionsListPageState extends State<MissionsListPage> {
         (builder: (context, state)
       {
         if (state is LoadingMissionsState){
-          return CircularProgressIndicator();
+          return Center(child:CircularProgressIndicator());
         }else if (state is LoadedMissionsState){
           return MissionsListWidget(missions: state.missions);
         }else if (state is ErrorMissionsState) {
           return Text('Error during the loading process');
         }
-        else return CircularProgressIndicator();
+        else return Center(child:CircularProgressIndicator());
       }
       ),
 

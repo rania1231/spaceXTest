@@ -18,7 +18,7 @@ class LaunchRemoteDataSourceImpl implements LaunchRemoteDataSource{
 
   @override
   Future<List<LaunchModel>> getAllLaunches()async {
-  final response=await client.get(Uri.parse(linkBase+'/launches'));
+  final response=await client.get(Uri.parse('https://api.spacexdata.com/v4/launches'));
   if(response.statusCode==200){
     List<dynamic>dataJson=json.decode(response.body) ;
     List<LaunchModel>data= dataJson.map((elt) => LaunchModel.fromJson(elt)).toList();
